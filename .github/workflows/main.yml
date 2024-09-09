@@ -33,9 +33,9 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         # 这个文件会公开
         env:
-          host: ${{ secrets.REMOTE_HOST }} # 指定 SSH 主机
-          username: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
-          password: ${{ secrets.REMOTE_PASS}} # 指定 SSH 密码
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 指定 SSH 主机
+          REMOTE_USER: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY}} # 指定 SSH 密码
           port: 22 # 指定 SSH 端口为 22
           SOURCE: './out' # 源目录，也就是构建后的目录
           TARGET: '/home/dist' # 指定远程服务器上的目标目录，需要提前创建
