@@ -38,4 +38,4 @@ jobs:
           password: ${{ secrets.REMOTE_PASS}} # 指定 SSH 密码
           port: 22 # 指定 SSH 端口为 22
           origin: './out' # 指定本地文件路径
-          target: '/dist' # 指定远程服务器上的目标路径，需要提前创建
+          destination: '/home/dist' # 指定远程服务器上的目标路径，需要提前创建
