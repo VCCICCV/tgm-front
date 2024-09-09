@@ -7,7 +7,7 @@ on:
 # 指定任务
 jobs:
   build:
-    runs-on: debian=latest # 指定操作系统
+    runs-on: debian-latest # 指定操作系统
     # 步骤
     steps:
       # uses指定用什么包
