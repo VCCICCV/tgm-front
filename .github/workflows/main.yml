@@ -28,6 +28,9 @@ jobs:
 
       - name: build app
         run: npm run build # 构建应用
+        
+      - name: Install rsync
+        run: sudo apt-get install rsync
 
       - name: copy dist file with scp
         uses: easingthemes/ssh-deploy@main
@@ -37,5 +40,5 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY}} # 指定 SSH 密码
           port: 22 # 指定 SSH 端口为 22
-          SOURCE: './out' # 源目录，也就是构建后的目录
+          SOURCE: './out' # 源目录，也就是build构建后的目录
           TARGET: '/home/dist' # 指定远程服务器上的目标目录，需要提前创建
