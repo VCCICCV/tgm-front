@@ -1,0 +1,34 @@
+# 定义一个名字
+name: deploy-website
+# 指定在main分支push时执行
+on:
+  push:
+    branches: [main]
+# 指定任务
+jobs:
+  build:
+    runs-on: debian=latest # 指定操作系统
+    # 步骤
+    steps:
+      # uses指定用什么包
+      # name指定名称
+      # run指定操作
+      - uses: actions/checkout@v4.1.7
+      - name: install nodejs
+        uses: actions/setup-node@v4.0.3
+        with:
+          node-version: "20.x"
+      - name: instal deps
+        run: npm install
+      - name: build app
+        run: npm run build
+      - name: copy dist file with scp
+        uses: srueda99/scp-action@v12
+        # 这个文件会公开，不要填写
+        with:
+          host: '服务器ip'
+          username: ''
+          password: ''
+          port: 22
+          source: 'docs/'
+          target: ''
