@@ -6,22 +6,29 @@ on:
     branches: [main]
 # 指定任务
 jobs:
-  build:
+  npm-build:
+    name: npm-build工作
     runs-on: ubuntu-latest # 指定操作系统
+
     # 步骤
     steps:
       # uses指定用什么包
       # name指定名称
       # run指定操作
-      - uses: actions/checkout@v4.1.7
+      - name: checkout code
+        uses: actions/checkout@v4.1.7
+
       - name: install nodejs
         uses: actions/setup-node@v4.0.3
         with:
           node-version: "20.x"
+
       - name: instal deps
         run: npm install # 安装依赖
+
       - name: build app
         run: npm run build # 构建应用
+
       - name: copy dist file with scp
         uses: srueda99/scp-action@v12
         # 这个文件会公开，不要填写
@@ -30,5 +37,5 @@ jobs:
           username: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
           password: ${{ secrets.REMOTE_PASS}} # 指定 SSH 密码
           port: 22 # 指定 SSH 端口为 22
-          source: 'dist' # 指定要复制的本地文件路径
-          target: '/dist' # 指定远程服务器上的目标路径
+          origin: './out' # 指定本地文件路径
+          target: '/dist' # 指定远程服务器上的目标路径，需要提前创建
