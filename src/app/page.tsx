@@ -1,4 +1,4 @@
-import { CustomFilter, CustomHome, SearchBar } from "@/components";
+import { CustomFilter, CustomHome, SearchBar } from "../components";
 import { Button } from '@nextui-org/button';
 export default function Home() {
   return (

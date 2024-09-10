@@ -10,7 +10,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar, Footer } from "@/components";
+import { Navbar, Footer } from "../components";
 
 // 1.导入Providers组件
 import { Providers } from "./providers";
