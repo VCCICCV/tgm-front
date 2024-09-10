@@ -2,7 +2,7 @@
  * @Author: cci
  * @Date: 2024-08-29 22:58:43
  * @LastEditors: cci
- * @LastEditTime: 2024-09-09 22:29:49
+ * @LastEditTime: 2024-09-11 03:41:58
  * @Description: 
  * 
  * Copyright (c) 2024 by TGM All Rights Reserved. 
@@ -19,7 +19,7 @@ const CustomHome = () => {
         <div className='home'>
             <div className='flex-1 pt-36 padding-x'>
                 <h1 className='home__title'>
-                    三峡汽车，探索世界的可靠伙伴
+                    锈化动力，探索世界的可靠伙伴
                 </h1>
                 <p className='home__subtitle'>
                     致力于为您提供可靠、实用、省心的汽车购买平台
@@ -36,8 +36,9 @@ const CustomHome = () => {
                         alt='home'
                         fill className='object-contain'
                     />
-                    <div className='home__image-overlay' />
+                    
                 </div>
+                <div className='home__image-overlay' />
             </div>
         </div>
     )

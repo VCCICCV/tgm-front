@@ -17,7 +17,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "三峡汽车",
+  title: "锈化动力",
   description: "We 3D 购车平台，可靠、实用、省心",
 };
 

@@ -71,7 +71,7 @@ export interface ShowMoreProps {
   isNext: boolean;
 }
 
-export interface SearchManuFacturerProps {
-  manufacturer: string;
-  setManuFacturer: (manufacturer: string) => void;
+export interface SearchProductProps {
+  carTypes: string;
+  setCarTypes: (carTypes: string) => void;
 }

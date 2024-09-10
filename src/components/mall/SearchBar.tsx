@@ -10,8 +10,10 @@
 'use client';
 
 import SearchProduct from "../mall/SearchProduct";
-// cost []
+import { useState } from "react";
+
 const SearchBar = () => {
+    const [carTypes, setCarTypes] = useState("")
     const handleSearch = () => { }
     return (
         <form className="searchbar"
@@ -23,7 +25,10 @@ const SearchBar = () => {
             <div
                 className="searchbar__item"
             >
-                <SearchProduct />
+                <SearchProduct 
+                    carTypes={carTypes}
+                    setCarTypes={setCarTypes}
+                />
             </div>
         </form>
     )
