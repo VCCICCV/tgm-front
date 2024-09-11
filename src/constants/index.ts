@@ -94,7 +94,7 @@ export const footerLinks = [
   {
     title: "联系方式",
     links: [
-      { title: "Discord", url: "/" },
+      { title: "GitHub", url: "/" },
       { title: "X", url: "/" },
       { title: "Facebook", url: "/" },
     ],

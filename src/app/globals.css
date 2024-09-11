@@ -1,3 +1,13 @@
+/*
+ * @Author: cci
+ * @Date: 2024-08-29 21:28:29
+ * @LastEditors: cci
+ * @LastEditTime: 2024-09-11 05:55:13
+ * @Description: 公共样式
+ * 
+ * Copyright (c) 2024 by TGM All Rights Reserved. 
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -3,8 +3,8 @@ import { Button } from '@nextui-org/button';
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <CustomHome />
 
+      <CustomHome />
       <div
         className="mt-12 padding-x padding-y max-width"
         id="discover"

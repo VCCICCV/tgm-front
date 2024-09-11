@@ -7,6 +7,7 @@
 # EXPOSE 暴露端口
 # CMD 容器启动时的执行命令，docker run的参数会覆盖CMD指定的参数，多个CMD，只有最后一个CMD才多个
 # ENTRYPOINT 容器启动时的入口点命令，docker run的参数不会覆盖ENTRYPOINT指定的参数
+
 FROM node:alpine
 WORKDIR /app
 COPY . .

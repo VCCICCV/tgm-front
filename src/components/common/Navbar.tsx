@@ -20,12 +20,14 @@ const Navbar = () => {
                     <Image
                         src="/logo.svg"
                         alt='TGM logo'
-                        width={118}
-                        height={18}
+                        width={28}
+                        height={28}
                         className='object-contain'
                     />
                 </Link>
-
+                <Link href="/">
+                
+                </Link>
                 <CustomButton
                     title='Sign in'
                     btnType='button'
