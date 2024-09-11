@@ -83,6 +83,9 @@ jobs:
     needs: build
     runs-on: self-hosted # 指定在自己的服务器上执行
     steps:
+      - name: Login to Docker Hub # 登录Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
       - name: Pull image from docker hub
         run: docker pull vcciccv/nextjs-app:latest # 拉取镜像到本地
 
@@ -93,48 +96,6 @@ jobs:
         run: docker rmi -f vcciccv/nextjs-app:latest # 删除旧镜像
       - name: Run docker container
         run: docker run -d -p 3000:3000 --name nextjs-app --restart always vcciccv/nextjs-app:latest # 运行镜像
-
-
-
-
-
-
-
-
-
-      - name: instal deps
-        run: npm install # 安装依赖
-
-      - name: build app
-        run: npm run build # 构建应用
-
-      - name: copy dist file with ssh
-        uses: easingthemes/ssh-deploy@main # 每个插件参数不一样，需要看文档
-        # 这个文件会公开
-        env:
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # 指定 SSH 主机
-          REMOTE_USER: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY}} # 指定 SSH 密码
-          ARGS: "-avzr --delete" # 指定 rsync 参数
-          SOURCE: './.next/' # 源目录，也就是build构建后的目录，如果直接上传整个项目，那打包就没有意义了
-          TARGET: '/home/dist' # 指定远程服务器上的目标目录，需要提前创建
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
