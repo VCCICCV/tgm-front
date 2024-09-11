@@ -21,7 +21,7 @@ jobs:
       - name: install nodejs
         uses: actions/setup-node@v4.0.3
         with:
-          node-version: "20.x"
+          node-version: "18.19.x"
 
       - name: instal deps
         run: npm install # 安装依赖
@@ -37,7 +37,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }} # 指定 SSH 用户名
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY}} # 指定 SSH 密码
           ARGS: "-avzr --delete" # 指定 rsync 参数
-          SOURCE: './out' # 源目录，也就是build构建后的目录，如果直接上传整个项目，那打包就没有意义了
+          SOURCE: './next' # 源目录，也就是build构建后的目录，如果直接上传整个项目，那打包就没有意义了
           TARGET: '/home/dist' # 指定远程服务器上的目标目录，需要提前创建
 
 # name: Build and Deploy Docker Image
